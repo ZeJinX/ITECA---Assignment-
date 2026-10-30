@@ -1,0 +1,1282 @@
+
+/*The inter font will be used from google to look like the font used in my figma design*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/*with some research by using root to store global variables this will store my variables and im then able to change a color here and
+ i will see a change amongst all my designs */
+
+:root 
+{
+    --background-color: #FFF5F8;
+    --yellow: #FFD600;
+    --pink: #FF69B4;
+    --cyan: #00E5FF; 
+    --green: #A3E635;
+    --border-dark: #000000;
+    --border-width: 4px;
+}
+
+/*the asterisk function will be to select all elements on the page and will reset to defualt browser spacings for me*/
+
+* { 
+   margin: 0; 
+   padding: 0; 
+   box-sizing: border-box; 
+   font-family: 'Inter', sans-serif; 
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/*Main body for my page (due to needing modbile, laptop and tablet overflow-x will hwlp prevent the side to side scrolling on mobile*/
+
+body 
+{ 
+   background-color: var(--background-color); 
+   color: var(--border-dark); 
+   overflow-x: hidden; 
+}
+
+/*The utilities for my neo-colour scheme*/
+
+/*Form input  */
+.form-input 
+{
+    width: 100%;
+    padding: 15px;
+    border: 3px solid var(--border-dark); 
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: white;
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+/* When the user clicks inside the box to type */
+
+.form-input:focus 
+{
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+    border-color: #00A8CC; 
+}
+
+/*creates the classic box and its design */
+
+.neo-box 
+{
+   background-color: #FFFFFF;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 6px 6px 0px 0px var(--border-dark);
+   padding: 20px;
+}
+
+/*Creates the buttons */
+
+.neo-btn 
+{
+   display: inline-flex; 
+   align-items: center; 
+   justify-content: center; /*centers the text correctly*/
+   padding: 12px 24px; 
+   font-weight: 900; 
+   font-size: 14px;
+   text-transform: uppercase; 
+   text-decoration: none; 
+   color: var(--border-dark);
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 5px 5px 0px 0px var(--border-dark);
+   cursor: pointer; 
+   transition: all 0.1s ease;
+}
+
+/* Creates a slight lift effect when the user hovers over the button */
+.neo-btn:hover 
+{
+   transform: translate(-2px, -2px);
+   box-shadow: 7px 7px 0px 0px var(--border-dark);
+}
+
+/* This will give the user a feel of actually pressing a button by clikcing the mouse as well as
+ this is what happens when the user clicks with their mouse */
+
+.neo-btn:active 
+{
+   transform: translate(5px, 5px);
+   box-shadow: 0px 0px 0px 0px var(--border-dark);
+}
+
+/*The color utilities for my neo-colour scheme and also will help for me to swap colors in my HTML*/
+
+.bg-yellow { background-color: var(--yellow); }
+.bg-pink   { background-color: var(--pink); }
+.bg-cyan   { background-color: var(--cyan); }
+.bg-green  { background-color: var(--green); }
+.bg-white  { background-color: #FFFFFF; }
+
+
+/*The different pages styles */
+
+/*The navigation bar for the top layout */
+
+.navbar
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 5% ;
+   background-color: #FFF;
+   border-bottom: var(--border-width) solid var(--border-dark);
+}
+
+.logo
+{
+   font-size: 24px;
+   font-weight: 900;
+   display: flex;
+   align-items: center;
+   gap: 10px; /* Added gap to push text away from the logo box */
+}
+
+.nav-links 
+{
+   display: flex;
+   gap: 20px;
+   align-items: center;
+}
+
+.nav-links a
+{
+   text-decoration: none;
+   color: var(--border-dark);
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 14px;
+}
+
+.nav-links a:hover
+{
+   text-decoration: underline; 
+   text-decoration-thickness: 3px;
+}
+
+.nav-links a.active-link
+{
+   color: var(--cyan);
+   text-decoration: underline;
+   text-decoration-thickness: 3px;
+   font-weight: 900;
+}
+
+/*this will only appear on mobile and is hidden by default */
+
+.hamburger 
+{
+   display: none;
+   font-size: 24px;
+   cursor: pointer;
+   background: none;
+   border: none;
+}
+
+/*The top section of the home page using grid template colums 1fr 1fr */
+
+.hero 
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap:40px;
+   padding: 60px 5%;
+   align-items: center;
+}
+
+.hero-content h1
+{
+   font-size: 80px;
+   font-weight: 900; 
+   line-height: 0.9;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+}
+
+.hero-content h1 span
+{
+   color: var(--pink);
+}
+
+.hero-content p
+{
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 40px;
+   max-width: 400px;
+}
+
+.hero-buttons
+{
+   display: flex;
+   gap: 20px;
+}
+
+.hero-image-box
+{
+   position: relative;
+   height: 400px;
+   background-color: #222;
+}
+
+/*the postion absolute will allow the image to float freely over the image box*/
+
+.tag 
+{
+   position: absolute;
+   padding: 5px 15px;
+   font-weight: 900; 
+   text-transform: uppercase;
+   border: 3px solid var(--border-dark);
+}
+
+/* Basic thick border class */
+
+.neo-border {
+    border: var(--border-width) solid var(--border-dark);
+}
+
+/* The badge above the main header */
+
+.neo-badge 
+{
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* The box around the printer logo */
+
+.logo-icon 
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+}
+
+/* The shopping cart button */
+
+.cart-btn 
+{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-right: 15px; /* Pushes the login button over a bit */
+}
+
+/* The pink notification bubble on the cart */
+
+.cart-badge 
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+}
+
+/*Forms and the login page */
+/*this will center the log in page to the middle of the screen */
+
+.login-wrapper
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: calc(100vh - 100px); /*this is a formula (100vh - xpx) used to minus the height from the navbar*/
+   padding: 40px 20px;
+}
+
+/*Ensures that the login box does not over stretch */
+
+.login-box
+{
+   max-width: 450px;
+   width:100%;
+   text-align: center;
+}
+
+.form-group
+{
+   margin-bottom: 20px;
+   text-align: left;
+}
+
+.form-label
+{
+   display:block;
+   font-weight: 900;
+   margin-bottom: 8px;
+   font-size: 14px;
+}
+
+/*the big input text boxes */
+
+.neo-input
+{
+   width: 100%;
+   padding: 15px;
+   font-size: 14px;
+   font-family: 'Inter', sans-serif;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 4px  4px 0px 0px var(--border-dark);
+   outline: none;
+   transition: all 0.1s ease;
+}
+
+/*Creates the text box to squish down when a user clicks and types in it*/
+
+.neo-input:focus
+{
+   transform: translate(2px, 2px);
+   box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+/*makes the login button stretch across */
+.w-100
+{
+   width: 100%;
+}
+
+/*The thick divider line */
+
+.divider
+{
+   border: none;
+   border-top: var(--border-width) solid var(--border-dark);
+   margin: 25px 0;
+}
+
+/*A small hint text will appear at the bottom */
+
+.hint-text
+{
+   font-size: 10px;
+   color: #9CA3AF;
+   margin-top: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 1.5;
+}
+
+/*MARKETPLACE AND PRODUCT CARDS */
+/*Top part with the title and search bar */
+.marketplace-header
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end; 
+   padding: 40px 5%;
+   border-bottom: var(--border-width) solid var(--border-dark);
+}
+
+/*The search Input box */
+.search-input
+{
+   padding: 12px 15px;
+   font-family: 'Inter', sans-serif;
+   font-size: 14px;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 4px 4px 0px 0px var(--border-dark);
+   width: 300px;
+   outline: none;
+   transition: all 0.1s ease;
+}
+
+.search-input:focus
+{
+   transform: translate(2px, 2px);
+   box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+/*Creating a CSS grid to handle all my scrolling automatically*/
+.marketplace-grid
+{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 40px;
+   padding: 40px 5%;
+}
+
+/*My individual product cards */
+.neo-card
+{
+   background-color: #FFF;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 8px 8px 0px 0px var(--border-dark);
+   display: flex;
+   flex-direction: column;
+   transition: transform 0.2s ease;
+}
+
+/*Creates a hover effect when the user hovers over it*/
+.neo-card:hover
+{
+   transform: translate(-4px, -4px);
+   box-shadow: 12px 12px 0px 0px var(--border-dark);
+}
+
+/*The box for images for the product cards*/
+.card-image-wrapper
+{
+   position: relative;
+   height: 200px;
+   border-bottom: var(--border-width) solid var(--border-dark);
+   background-color: #222;
+}
+
+.card-image-wrapper img
+{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/*The tag that will show either a service or a product on the card*/
+.card-badge 
+{
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   padding: 5px 10px;
+   font-weight: 900;
+   font-size: 12px;
+   border: 3px solid var(--border-dark);
+   box-shadow: 3px 3px 0px 0px var(--border-dark);
+   text-transform: uppercase;
+}
+
+/*The lower part of the cards to show price */
+.card-content
+{
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1; 
+}
+
+.card-title
+{
+   font-size: 18px;
+   font-weight: 900; 
+   text-transform: uppercase;
+   margin-bottom: 5px;
+}
+
+.card-user
+{
+   color: #6B7280;
+   font-size: 14px;
+   font-weight: 700;
+   margin-bottom: 15px;
+}
+
+.card-divider 
+{
+   border: none;
+   border-top: 3px solid var(--border-dark);
+   margin-bottom: 15px;
+}
+
+/*This will keep my prices and cart button to the left and right aligned */
+.card-footer
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: auto;
+}
+
+.card-price
+{
+   font-size: 20px;
+   font-weight: 900;
+}
+
+/*My yellow add to cart button on the card*/
+.add-to-cart-btn 
+{
+   background-color: var(--yellow);
+   border: 3px solid var(--border-dark);
+   box-shadow: 3px 3px 0px 0px var(--border-dark);
+   padding: 8px 12px;
+   cursor: pointer;
+   font-size: 18px;
+   transition: all 0.1s ease;
+}
+
+.add-to-cart-btn:hover 
+{
+   transform: translate(-2px, -2px);
+   box-shadow: 5px 5px 0px 0px var(--border-dark);
+}
+
+.add-to-cart-btn:active 
+{
+   transform: translate(2px, 2px);
+   box-shadow: 1px 1px 0px 0px var(--border-dark);
+}
+
+
+   /*USER DASHBOARD PAGE*/
+  
+
+/*My sidebar will be on the left and my content will be on the right */
+.dashboard-wrapper
+{
+   display: flex;
+   min-height: calc(100vh - 100px); /*used to calculate the navbar height */
+   border-top: var(--border-width) solid var(--border-dark);
+}
+
+/*My sidebar style */
+.dashboard-sidebar
+{
+   width: 250px;
+   background-color: #B4FF36; 
+   border-right: var(--border-width) solid var(--border-dark);
+   padding: 30px 20px;
+   flex-shrink: 0; /*prevents the sidebar from shrinking when the screen size changes*/
+}
+
+.sidebar-title
+{
+   font-weight: 900;
+   font-size: 20px;
+   margin-bottom: 30px;
+   text-transform: uppercase;
+}
+
+.sidebar-link
+{
+   display: block;
+   padding: 15px;
+   margin-bottom: 15px;
+   font-weight: 900;
+   text-decoration: none;
+   color: black;
+   border: 3px solid transparent;
+   transition: all 0.1s ease;
+}
+
+/*Style for the button that will be selected */
+.sidebar-link.active 
+{
+   background-color: white;
+   border: 3px solid var(--border-dark);
+   box-shadow: 4px 4px 0px 0px var(--border-dark);
+}
+
+/*The content styles for the main */
+.dashboard-main 
+{
+    flex-grow: 1; 
+    padding: 40px 5%;
+}
+
+.dashboard-header-flex
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   margin-bottom: 40px;
+}
+
+/*This will split jobs and services into wide columns */
+.dashboard-grid
+{
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   gap: 40px;
+}
+
+.section-title
+{
+   font-weight: 900;
+   font-size: 24px;
+   margin-bottom: 15px;
+   text-transform: uppercase;
+}
+
+/*The job cards */
+.job-card 
+{
+   display: flex;
+   align-items: center;
+   background-color: white;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 8px 8px 0px 0px var(--border-dark);
+   padding: 20px;
+   margin-bottom: 20px;
+}
+
+.job-icon-box
+{
+   width: 60px;
+   height: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 24px;
+   border: 3px solid var(--border-dark);
+   margin-right: 20px;
+}
+
+.job-details
+{
+   flex-grow: 1;
+}
+
+.job-title-row
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 5px;
+}
+
+.job-badge
+{
+   background-color: #222;
+   color: white;
+   padding: 5px 10px;
+   font-size: 12px;
+   font-weight: 900;
+}
+
+.job-status-row
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 15px;
+   font-size: 12px;
+   font-weight: 900;
+}
+
+/*The service cards */
+.service-card
+{
+   padding: 30px;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 8px 8px 0px 0px var(--border-dark); 
+   margin-bottom: 30px;
+}
+
+/*Dashboard Forms The upload, The Request and the Rates */
+
+.dashboard-form-box 
+{
+    background-color: white;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    padding: 40px;
+    max-width: 800px; /* This will keep the forms from stretching too wide */
+}
+
+/* The square back button next to the titles */
+
+.back-btn 
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; 
+    height: 45px;
+    border: 3px solid var(--border-dark);
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+    transition: all 0.1s ease;
+}
+
+.back-btn:hover 
+{
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+}
+
+.back-btn:active 
+{
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+.page-title-row 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* The dashed upload area */
+
+.upload-area 
+{
+    border: 3px dashed var(--border-dark);
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #F8FAFC;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.upload-area:hover 
+{
+    background-color: #E2E8F0;
+}
+
+/* Utility to put two form inputs side-by-side */
+
+.form-row-2 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Makes text areas taller than normal inputs */
+
+textarea.neo-input 
+{
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* The dynamic pricing rows for Set Rates */
+
+.rates-row 
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 3px solid var(--border-dark);
+    background-color: white;
+}
+
+/*The Settings Page */
+
+.profile-section 
+{
+    background-color: white;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    padding: 30px;
+}
+
+/* The yellow icon and "Public Profile" header */
+.profile-header-box 
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--border-dark);
+}
+
+.profile-icon 
+{
+    width: 70px;
+    height: 70px;
+    background-color: var(--yellow);
+    border: 3px solid var(--border-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+/* The side-widgets Notifications & Security */
+.settings-widget 
+{
+    padding: 25px;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    margin-bottom: 30px;
+}
+
+.checkbox-group 
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.checkbox-group input 
+{
+    width: 20px;
+    height: 20px;
+    accent-color: black;
+}
+
+/*The Cart and Checkout pages */
+
+.cart-container 
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 5%;
+}
+
+.cart-header 
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.icon-box-large 
+{
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--border-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+}
+
+.cart-grid 
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* CART ITEMS */
+.cart-item 
+{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 3px solid var(--border-dark);
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.cart-item-img 
+{
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--border-dark);
+    object-fit: cover;
+    background-color: #f1f1f1;
+}
+
+.cart-item-details 
+{
+    flex-grow: 1;
+}
+
+.cart-price 
+{
+    color: #00A8CC; 
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+/* Quantity controls and delete button */
+
+.cart-actions 
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.qty-controls 
+{
+    display: flex;
+    border: 3px solid var(--border-dark);
+    height: 40px;
+}
+
+.qty-btn 
+{
+    width: 35px;
+    background: white;
+    border: none;
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.qty-btn:active 
+{
+    background: #f1f1f1;
+}
+
+.qty-input 
+{
+    width: 40px;
+    text-align: center;
+    border: none;
+    border-left: 3px solid var(--border-dark);
+    border-right: 3px solid var(--border-dark);
+    font-weight: 900;
+    font-size: 16px;
+    outline: none;
+}
+
+.delete-btn 
+{
+    width: 40px;
+    height: 40px;
+    background-color: var(--pink);
+    border: 3px solid var(--border-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 2px 2px 0px 0px var(--border-dark);
+    transition: all 0.1s ease; /* Added transition so the hover is smooth */
+}
+
+.delete-btn:hover 
+{
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+}
+
+.delete-btn:active 
+{
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px var(--border-dark);
+}
+
+/* ORDER SUMMARY  */
+
+.order-summary 
+{
+    background-color: var(--yellow);
+    border: 3px solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    padding: 30px;
+}
+
+.summary-row 
+{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.summary-total 
+{
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* CHECKOUT SPECIFIC */
+
+.checkout-container 
+{
+    max-width: 600px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.checkout-box 
+{
+    background-color: white;
+    border: 3px solid var(--border-dark);
+    box-shadow: 12px 12px 0px 0px var(--border-dark);
+    padding: 50px 40px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.payfast-box 
+{
+    border: 3px solid var(--border-dark);
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #F8FAFC;
+}
+
+/*The admin pages */
+
+/* Dark background for the admin main area to show the difference */
+.admin-main 
+{
+    flex-grow: 1;
+    padding: 40px 5%;
+    background-color: #222222; 
+    color: white;
+}
+
+.admin-main h1, .admin-main h2, .admin-main h3 
+{
+    color: white;
+}
+
+.admin-main p 
+{
+    color: #A1A1AA;
+}
+
+/* 4-Column Stat Cards */
+
+.admin-stats-grid 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card 
+{
+    background-color: white;
+    border: 3px solid var(--border-dark);
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+    padding: 20px;
+    color: black;
+}
+
+.stat-icon 
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-dark);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.stat-title 
+{
+    font-weight: 900;
+    font-size: 12px;
+    color: #64748B;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.stat-value 
+{
+    font-weight: 900;
+    font-size: 32px;
+    color: black;
+}
+
+/* TheAdmin Tables */
+
+.admin-table-wrapper 
+{
+    background-color: white;
+    border: 3px solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    color: black;
+    overflow-x: auto; /* This ddds a scrollbar on small screens */
+}
+
+.admin-table 
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td 
+{
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 3px solid var(--border-dark);
+    font-weight: 900;
+}
+
+.admin-table th 
+{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.admin-table tr:last-child td 
+{
+    border-bottom: none;
+}
+
+.th-green 
+{
+    background-color: #B4FF36;
+}
+
+.admin-badge 
+{
+    padding: 5px 10px;
+    border: 3px solid var(--border-dark);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+.badge-green 
+{ 
+   background-color: #B4FF36; color: black; 
+}
+
+.badge-yellow 
+{ 
+   background-color: var(--yellow); color: black; 
+}
+
+.badge-pink 
+{ 
+   background-color: var(--pink); color: black; 
+}
+
+.badge-cyan 
+{ 
+   background-color: #00E5FF; color: black; 
+}
+
+/* The System Alerts */
+
+.admin-alert 
+{
+    background-color: var(--pink);
+    border: 3px solid var(--border-dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+}
+
+.admin-alert h4 
+{
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.admin-alert p 
+{
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+}
+    
+/*Media Queries */
+/*The responsive design */
+
+@media (max-width: 900px)
+{
+   .hero
+   {
+      grid-template-columns: 1fr;
+      text-align:center;
+   }
+   .hero-content h1 
+   {
+      font-size: 60px;
+   }
+   .hero-content p
+   {
+      margin: 0 auto 30px auto;
+   }
+   .hero-buttons
+   {
+      justify-content: center;
+   }
+}
+
+/*when the screen size shrinks to 768px for mobile the hamburger menu wil appear*/
+
+@media (max-width: 768px)
+{
+   .nav-links
+   {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 4px solid black; 
+      padding: 20px;
+      z-index: 100; 
+   }
+
+   /*Connected to the javascript file for user interaction with the menu*/
+   .nav-links.active
+   {
+      display: flex;
+   }
+
+   .hamburger
+   {
+      display: block;
+   }
+
+   .hero-buttons 
+   {
+      flex-direction: column;
+   }
+}
+
+   
+
+

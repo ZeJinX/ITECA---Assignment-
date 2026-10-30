@@ -1,0 +1,643 @@
+/*The inter font will be used from google to look like the font used in my figma design*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/*with some research by using root to store global variables this will store my variables and im then able to change a color here and
+ i will see a change amongst all my designs */
+
+:root 
+{
+    --background-color: #FFF5F8;
+    --yellow: #FFD600;
+    --pink: #FF69B4;
+    --cyan: #00E5FF; 
+    --green: #A3E635;
+    --border-dark: #000000;
+    --border-width: 4px;
+}
+
+/*the asterisk function will be to select all elements on the page and will reset to defualt browser spacings for me*/
+
+* { 
+   margin: 0; 
+   padding: 0; 
+   box-sizing: border-box; 
+   font-family: 'Inter', sans-serif; 
+}
+
+
+/*Main body for my page (due to needing modbile, laptop and tablet overflow-x will hwlp prevent the side to side scrolling on mobile*/
+
+body 
+{ 
+   background-color: var(--background-color); 
+   color: var(--border-dark); 
+   overflow-x: hidden; 
+}
+
+/*The utilities for my neo-colour scheme*/
+
+/*Form input  */
+.form-input 
+{
+    width: 100%;
+    padding: 15px;
+    border: 3px solid var(--border-dark); 
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    background-color: white;
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+/* When the user clicks inside the box to type */
+
+.form-input:focus 
+{
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--border-dark);
+    border-color: #00A8CC; 
+}
+
+/*creates the classic box and its design */
+
+.neo-box 
+{
+   background-color: #FFFFFF;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 6px 6px 0px 0px var(--border-dark);
+   padding: 20px;
+}
+
+/*Creates the buttons */
+
+.neo-btn 
+{
+   display: inline-flex; 
+   align-items: center; 
+   justify-content: center; /*centers the text correctly*/
+   padding: 12px 24px; 
+   font-weight: 900; 
+   font-size: 14px;
+   text-transform: uppercase; 
+   text-decoration: none; 
+   color: var(--border-dark);
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 5px 5px 0px 0px var(--border-dark);
+   cursor: pointer; 
+   transition: all 0.1s ease;
+}
+
+/* This will give the user a feel of actually pressing a button by clikcing the mouse as well as
+ this is what happens when the user clicks with their mouse */
+
+.neo-btn:active 
+{
+   transform: translate(5px, 5px);
+   box-shadow: 0px 0px 0px 0px var(--border-dark);
+}
+
+/*The color utilities for my neo-colour scheme and also will help for me to swap colors in my HTML*/
+
+.bg-yellow { background-color: var(--yellow); }
+.bg-pink   { background-color: var(--pink); }
+.bg-cyan   { background-color: var(--cyan); }
+.bg-green  { background-color: var(--green); }
+.bg-white  { background-color: #FFFFFF; }
+
+
+/*The different pages styles */
+
+/*The navigation bar for the top layout */
+
+.navbar
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 5% ;
+   background-color: #FFF;
+   border-bottom: var(--border-width) solid var(--border-dark);
+}
+
+.logo
+{
+   font-size: 24px;
+   font-weight: 900;
+   display: flex;
+   align-items: center;
+   gap: 10px; /* Added gap to push text away from the logo box */
+}
+
+.nav-links 
+{
+   display: flex;
+   gap: 20px;
+   align-items: center;
+}
+
+.nav-links a
+{
+   text-decoration: none;
+   color: var(--border-dark);
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 14px;
+}
+
+.nav-links a:hover
+{
+   text-decoration: underline; 
+   text-decoration-thickness: 3px;
+}
+
+/*this will only appear on mobile and is hidden by default */
+
+.hamburger 
+{
+   display: none;
+   font-size: 24px;
+   cursor: pointer;
+   background: none;
+   border: none;
+}
+
+/*The top section of the home page using grid template colums 1fr 1fr */
+
+.hero 
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap:40px;
+   padding: 60px 5%;
+   align-items: center;
+}
+
+.hero-content h1
+{
+   font-size: 80px;
+   font-weight: 900; 
+   line-height: 0.9;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+}
+
+.hero-content h1 span
+{
+   color: var(--pink);
+}
+
+.hero-content p
+{
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 40px;
+   max-width: 400px;
+}
+
+.hero-buttons
+{
+   display: flex;
+   gap: 20px;
+}
+
+.hero-image-box
+{
+   position: relative;
+   height: 400px;
+   background-color: #222;
+}
+
+/*the postion absolute will allow the image to float freely over the image box*/
+
+.tag 
+{
+   position: absolute;
+   padding: 5px 15px;
+   font-weight: 900; 
+   text-transform: uppercase;
+   border: 3px solid var(--border-dark);
+}
+
+/* Basic thick border class */
+
+.neo-border {
+    border: var(--border-width) solid var(--border-dark);
+}
+
+/* The badge above the main header */
+
+.neo-badge 
+{
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 4px 4px 0px 0px var(--border-dark);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* The box around the printer logo */
+
+.logo-icon 
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+}
+
+/* The shopping cart button */
+
+.cart-btn 
+{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-right: 15px; /* Pushes the login button over a bit */
+}
+
+/* The pink notification bubble on the cart */
+
+.cart-badge 
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+}
+
+/*Forms and the login page */
+/*this will center the log in page to the middle of the screen */
+
+.login-wrapper
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: calc(100vh - 100px); /*this is a formula (100vh - xpx) used to minus the height from the navbar*/
+   padding: 40px 20px;
+}
+
+/*Ensures that the login box does not over stretch */
+
+.login-box
+{
+   max-width: 450px;
+   width:100%;
+   text-align: center;
+}
+
+/* --- Extracted Login Styles --- */
+
+.error-message {
+    background-color: #FF4980;
+    color: white;
+    border: 3px solid var(--border-dark);
+    padding: 15px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.login-heading {
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.login-subheading {
+    font-weight: 700;
+    color: #6B7280;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.login-action-btn {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.signup-text {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.signup-link-btn {
+    font-size: 14px;
+    padding: 15px;
+}
+
+/* ------------------------------ */
+
+.form-group
+{
+   margin-bottom: 20px;
+   text-align: left;
+}
+
+.form-label
+{
+   display:block;
+   font-weight: 900;
+   margin-bottom: 8px;
+   font-size: 14px;
+}
+
+/*the big input text boxes */
+
+.neo-input
+{
+   width: 100%;
+   padding: 15px;
+   font-size: 14px;
+   font-family: 'Inter', sans-serif;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 4px  4px 0px 0px var(--border-dark);
+   outline: none;
+   transition: all 0.1s ease;
+}
+
+/*Creates the text box to squish down when a user clicks and types in it*/
+
+.neo-input:focus
+{
+   transform: translate(2px, 2px);
+   box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+/*makes the login button stretch across */
+.w-100
+{
+   width: 100%;
+}
+
+/*The thick divider line */
+
+.divider
+{
+   border: none;
+   border-top: var(--border-width) solid var(--border-dark);
+   margin: 25px 0;
+}
+
+/*A small hint text will appear at the bottom */
+
+.hint-text
+{
+   font-size: 10px;
+   color: #9CA3AF;
+   margin-top: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 1.5;
+}
+
+/*MARKETPLACE AND PRODUCT CARDS */
+/*Top part with the title and search bar */
+.marketplace-header
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end; 
+   padding: 40px 5%;
+   border-bottom: var(--border-width) solid var(--border-dark);
+}
+
+/*The search Input box */
+.search-input
+{
+   padding: 12px 15px;
+   font-family: 'Inter', sans-serif;
+   font-size: 14px;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 4px 4px 0px 0px var(--border-dark);
+   width: 300px;
+   outline: none;
+   transition: all 0.1s ease;
+}
+
+.search-input:focus
+{
+   transform: translate(2px, 2px);
+   box-shadow: 2px 2px 0px 0px var(--border-dark);
+}
+
+/*Creating a CSS grid to handle all my scrolling automatically*/
+.marketplace-grid
+{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 40px;
+   padding: 40px 5%;
+}
+
+/*My individual product cards */
+.neo-card
+{
+   background-color: #FFF;
+   border: var(--border-width) solid var(--border-dark);
+   box-shadow: 8px 8px 0px 0px var(--border-dark);
+   display: flex;
+   flex-direction: column;
+   transition: transform 0.2s ease;
+}
+
+/*Creates a hover effect when the user hovers over it*/
+.neo-card:hover
+{
+   transform: translate(-4px, -4px);
+   box-shadow: 12px 12px 0px 0px var(--border-dark);
+}
+
+/*The box for images for the product cards*/
+.card-image-wrapper
+{
+   position: relative;
+   height: 200px;
+   border-bottom: var(--border-width) solid var(--border-dark);
+   background-color: #222;
+}
+
+.card-image-wrapper img
+{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/*The tag that will show either a service or a product on the card*/
+.card-badge 
+{
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   padding: 5px 10px;
+   font-weight: 900;
+   font-size: 12px;
+   border: 3px solid var(--border-dark);
+   box-shadow: 3px 3px 0px 0px var(--border-dark);
+   text-transform: uppercase;
+}
+
+/*The lower part of the cards to show price */
+.card-content
+{
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1; 
+}
+
+.card-title
+{
+   font-size: 18px;
+   font-weight: 900; 
+   text-transform: uppercase;
+   margin-bottom: 5px;
+}
+
+.card-user
+{
+   color: #6B7280;
+   font-size: 14px;
+   font-weight: 700;
+   margin-bottom: 15px;
+}
+
+.card-divider 
+{
+   border: none;
+   border-top: 3px solid var(--border-dark);
+   margin-bottom: 15px;
+}
+
+/*This will keep my prices and cart button to the left and right aligned */
+.card-footer
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: auto;
+}
+
+.card-price
+{
+   font-size: 20px;
+   font-weight: 900;
+}
+
+/*My yellow add to cart button on the card*/
+.add-to-cart-btn 
+{
+   background-color: var(--yellow);
+   border: 3px solid var(--border-dark);
+   box-shadow: 3px 3px 0px 0px var(--border-dark);
+   padding: 8px 12px;
+   cursor: pointer;
+   font-size: 18px;
+   transition: all 0.1s ease;
+}
+
+.add-to-cart-btn:active 
+{
+   transform: translate(2px, 2px);
+   box-shadow: 1px 1px 0px 0px var(--border-dark);
+}
+
+
+   /*USER DASHBOARD PAGE*/
+  
+
+/*My sidebar will be on the left and my content will be on the right */
+.dashboard-wrapper
+{
+   display: flex;
+   min-height: calc(100vh - 100px); /*used to calculate the navbar height */
+   border-top: var(--border-width) solid var(--border-dark);
+}
+
+/*My sidebar style */
+.dashboard-sidebar
+{
+   width: 250px;
+   background-color: #B4FF36; 
+   border-right: var(--border-width) solid var(--border-dark);
+   padding: 30px 20px;
+   flex-shrink: 0; /*prevents the sidebar from shrinking when the screen size changes*/
+}
+
+.sidebar-title
+{
+   font-weight: 900;
+   font-size: 20px;
+   margin-bottom: 30px;
+   text-transform: uppercase;
+}
+
+.sidebar-link
+{
+   display: block;
+   padding: 15px;
+   margin-bottom: 15px;
+   font-weight: 900;
+   text-decoration: none;
+   color: black;
+   border: 3px solid transparent;
+   transition: all 0.1s ease;
+}
+
+/*Style for the button that will be selected */
+.sidebar-link.active 
+{
+   background-color: white;
+   border: 3px solid var(--border-dark);
+   box-shadow: 4px 4px 0px 0px var(--border-dark);
+}
+
+/*The content styles for the main */
+.dashboard-main 
+{
+    flex-grow: 1; 
+    padding: 40px 5%;
+}
+
+.dashboard-header-flex
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   margin-bottom: 40px;
+}
+
+/*This will split jobs and services into wide columns */
+.dashboard-grid
+{
+   display: grid;
+   grid
